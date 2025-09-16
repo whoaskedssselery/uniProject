@@ -1,7 +1,3 @@
-/* Импорты */
-@import url(./fonts.css);
-@import url(./root.css);
-
 /* БАЗА из шаблона: читаемость и предсказуемость размеров */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
@@ -32,14 +28,3 @@ button:hover { filter: brightness(0.95); }
 :disabled, [aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
 /* Подсветка ошибочных полей (установите aria-invalid="true") */
 [aria-invalid="true"] { border-color: #b00020; }
-
-/*  Применение шрифта*/
-body {
-  font-family: var(--font-family);
-  line-height: 1.5;
-}
-
-/* Стили для  окна-диалога */
-dialog { padding: 1.25rem; border: none; border-radius: 12px; }
-dialog::backdrop { background: rgba(0,0,0,.5); }
-.form-actions { display:flex; gap:.5rem; margin-top:1rem; }
