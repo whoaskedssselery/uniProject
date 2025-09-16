@@ -1,5 +1,5 @@
-# Мой первый проект
+# Мой *(не)* первый проект
 ## Проект
 Этот репозиторий является каркасом для будущего веб-приложения.
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://whoaskedssselery.github.io/ИМЯ_РЕПОЗИТОРИЯ/src/index.html)
+- [Публичная страница на GitHub Pages](https://whoaskedssselery.github.io/uniProject/src/index.html)
