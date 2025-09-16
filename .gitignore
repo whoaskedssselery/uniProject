@@ -9,5 +9,3 @@ node_modules/
 # Игнорирование личного дебага
 .firefox-tmp/
 
-# Игнорирование map файла
-css/styles.css.map
