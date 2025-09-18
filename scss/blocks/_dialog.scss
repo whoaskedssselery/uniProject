@@ -26,9 +26,14 @@ input, select, textarea, button {
   background: #fff;
 }
 
+label {
+  display: block;
+  margin: 0.5rem 0 0.25rem;
+}
+
 .form-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: 10px;
   margin-top: 1rem;
 }
 

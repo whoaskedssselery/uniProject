@@ -15,3 +15,7 @@
    width: #{$size}px;
    aspect-ratio: 1;
 }
+
+@mixin fluid-text($min, $max) {
+   font-size: clamp(#{$min}px, #{($max) / 100 * (1920 - 300)}px, #{$max}px)
+};
