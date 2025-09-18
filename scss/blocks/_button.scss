@@ -1,0 +1,16 @@
+.button {
+   background-color: var(--button-color);
+   height: var(--button-height);
+   max-width: var(--button-width);
+   width: 100%;
+
+   color: var(--color-light);
+   cursor: pointer;
+
+   border: none;
+   border-radius: var(--border-radius);
+
+   &:hover {
+      filter: brightness(0.95);
+   }
+}

@@ -1,0 +1,19 @@
+@use "./root";
+
+@mixin tablet() {
+   @media(var(--tablet-width)) {
+      @content;
+   }
+}
+
+@mixin mobile() {
+   @media(var(--mobile-width)) {
+      @content;
+   }
+}
+
+@mixin under-mobile() {
+   @media(var(--under-mobile-width)) {
+      @content;
+   }
+}

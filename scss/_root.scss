@@ -1,6 +1,25 @@
 :root {
    --font-family: 'Poppins', sans-serif;
 
+   --color-dark: #191A23;
    --color-light: #FFFFFF;
-   --color-dark: #000000;
+   --color-accent: #B9FF66;
+   --color-gray: #F3F3F3;
+   --color-gray-alt: #898989;
+   --color-dark-alt: #292A32;
+
+   --button-color: #0a84ff;
+   --button-height: 40px;
+   --button-width: 200px;
+
+   --border: 1px solid var(--color-dark);
+   --border-radius: 14px;
+  --border-radius-tiny: 7px;
+  --border-radius-big: 45px;
+
+ --shadow: 0 5px 0 0 var(--color-dark);
+
+   --mobile-width: 767px;
+   --under-mobile-width: 430px;
+   --tablet-width: 1240px;
 }
