@@ -1,0 +1,19 @@
+.footer {
+   display: flex;
+   column-gap: 50px;
+   justify-content: space-between;
+   align-items: center;
+   
+   margin-top: auto;
+   padding: 20px 30px;
+
+   & a {
+      text-decoration: none;
+      color: var(--color-dark);
+   }
+
+   &__info {
+      display: flex;
+      column-gap: 20px;
+   }
+}

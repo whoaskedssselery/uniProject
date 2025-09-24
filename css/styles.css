@@ -28,7 +28,8 @@
   --border-radius: 14px;
   --border-radius-tiny: 7px;
   --border-radius-big: 45px;
-  --container-inline: 150px;
+  --transition-duration: 0.3s ease;
+  --container-inline: 300px;
   --shadow: 0 5px 0 0 var(--color-dark);
   --mobile-width: 767px;
   --under-mobile-width: 430px;
@@ -187,9 +188,22 @@ svg * {
   }
 }
 body {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-family);
   line-height: 1.5;
   font-weight: 400;
+  background-color: var(--color-light);
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.content__title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .dialog {
@@ -245,8 +259,37 @@ label {
   filter: brightness(0.95);
 }
 
+.bread-crumbs {
+  position: absolute;
+  padding-block: 14px;
+}
+.bread-crumbs__link {
+  color: var(--color-dark-alt);
+  font-weight: 700;
+  text-decoration: none;
+}
+.bread-crumbs__link:hover {
+  text-decoration: underline;
+}
+
 .container {
   margin-inline: var(--container-inline);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+  margin-bottom: 50px;
+  border-radius: var(--border-radius);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  background-color: var(--color-gray);
+}
+.section__title {
+  display: inline-flex;
+  justify-content: start;
 }
 
 .header {
@@ -268,10 +311,34 @@ label {
 }
 .navigation__menu {
   display: flex;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  transition-duration: var(--transitin-duration);
 }
 .navigation__link {
   color: var(--color-dark);
   text-decoration: none;
+}
+.navigation__item:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.footer {
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding: 20px 30px;
+}
+.footer a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+.footer__info {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }/*# sourceMappingURL=styles.css.map */

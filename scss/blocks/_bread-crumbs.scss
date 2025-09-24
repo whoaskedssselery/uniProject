@@ -1,0 +1,15 @@
+.bread-crumbs {
+   position: absolute;
+   padding-block: 14px;
+
+
+   &__link {
+      color: var(--color-dark-alt);
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}

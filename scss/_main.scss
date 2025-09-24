@@ -1,6 +1,21 @@
 body {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-family);
   line-height: 1.5;
   font-weight: 400;
+  background-color: var(--color-light);
 }
 
+p {
+  margin-bottom: 0;
+}
+
+.content {
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}

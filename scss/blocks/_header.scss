@@ -22,12 +22,20 @@
 
    &__menu {
       display: flex;
-      column-gap: 40px;
+      column-gap: 50px;
 
+      transition-duration: var(--transitin-duration);
    }
 
    &__link {
       color: var(--color-dark);
       text-decoration: none;
+   }
+
+   &__item {
+      &:hover {
+         text-decoration: underline;
+         transform: scale(1.05);
+      }
    }
 }

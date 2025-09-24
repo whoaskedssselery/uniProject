@@ -19,10 +19,10 @@
                <li class="navigation__item">
                   <a href="#" class="navigation__link">Главная</a>
                </li>
-               <li navigation__item>
+               <li class="navigation__item">
                   <a href="./about.html" class="navigation__link">О нас</a>
                </li>
-               <li navigation__item>
+               <li class="navigation__item">
                   <a href="./contacts.html" class="navigation__link">Контакты</a>
                </li>
             </ul>
@@ -42,7 +42,7 @@
 
          <!-- Секция 2 с якорем -->
          <section id="portfolio" class="section">
-            <h2 class="section title">Портфолио</h2>
+            <h2 class="section__title">Портфолио</h2>
             <p class="section__description">Примеры наших работ...</p>
          </section>
 
@@ -52,8 +52,16 @@
             <p class="section__description">Наши контакты...</p>
             <a href="./contacts.html" class="section__link">Подробнее</a> <!-- Ссылка на отдельную страницу -->
          </section>
+      </main>
 
-         <!-- Кнопка открытия модалки -->
+      <!-- Подвал сайта -->
+      <footer class=" footer container">
+         <div class="footer__info">
+            <p>&copy; 2025 SSSELERY. Все права защищены.</p>
+            <a href="tel:79775200671">Телефон: +7 (977) 520-06-71</a>
+         </div>
+
+                  <!-- Кнопка открытия модалки -->
          <button id="openDialog" type="button" class="button">Написать нам</button>
          <!-- Модалка с формой -->
          <dialog id="contactDialog" aria-labelledby="dialogTitle" class="dialog">
@@ -93,12 +101,6 @@
                </div>
             </form>
          </dialog>
-      </main>
-
-      <!-- Подвал сайта -->
-      <footer class=" footer container">
-         <p>&copy; 2025 SSSELERY. Все права защищены.</p>
-         <p>Телефон: +7 (977) 520-06-71</p>
       </footer>
 
       <script src="../scripts/main.js" defer></script>
