@@ -29,7 +29,7 @@
   --border-radius-tiny: 7px;
   --border-radius-big: 45px;
   --transition-duration: 0.3s ease;
-  --container-inline: 300px;
+  --container-inline: 350px;
   --shadow: 0 5px 0 0 var(--color-dark);
   --mobile-width: 767px;
   --under-mobile-width: 430px;
@@ -206,6 +206,26 @@ p {
   margin-bottom: 20px;
 }
 
+.media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.media iframe {
+  aspect-ratio: 16/9;
+}
+@media (max-width: 1280px) {
+  .media .media {
+    width: 100%;
+  }
+}
+
+.my-own-guard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .dialog {
   padding: 1.25rem;
   border: none;
@@ -290,6 +310,10 @@ label {
 .section__title {
   display: inline-flex;
   justify-content: start;
+}
+.section:target {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .header {
