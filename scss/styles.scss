@@ -1,6 +1,14 @@
-@use "fonts";
-@use "root";
-@use "reset";
-@use "mixins";
-@use "media";
-@use "main";
+@use "./fonts";
+@use "./root";
+@use "./normalize";
+@use "./mixins";
+@use "./media";
+@use "./main";
+
+@use "./blocks/dialog";
+@use "./blocks/button";
+@use "./blocks/bread-crumbs";
+@use "./blocks/container";
+@use "./blocks/section";
+@use "./blocks/header";
+@use "./blocks/footer";

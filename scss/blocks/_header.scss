@@ -1,0 +1,41 @@
+@use "../mixins";
+
+.header {
+   display: flex;
+   justify-content: space-between;
+   column-gap: 40px;
+
+
+   &__logo {
+      @include mixins.fluid-text(24, 32);
+
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--color-dark);
+
+      font-weight: 700;
+   }
+}
+
+.navigation {
+   padding: 10px;
+
+   &__menu {
+      display: flex;
+      column-gap: 50px;
+
+      transition-duration: var(--transitin-duration);
+   }
+
+   &__link {
+      color: var(--color-dark);
+      text-decoration: none;
+   }
+
+   &__item {
+      &:hover {
+         text-decoration: underline;
+         transform: scale(1.05);
+      }
+   }
+}

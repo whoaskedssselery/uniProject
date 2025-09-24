@@ -12,40 +12,46 @@
 </head>
    <body>
       <!-- Шапка сайта -->
-      <header>
-         <a href="./index.html">ssselery</a>
+      <header class="header container">
+         <a href="#" class="header__logo">ssselery</a>
          <!-- Главное меню навигации -->
-         <nav>
-            <ul>
-               <li><a href="./index.html">Главная</a></li>
-               <li><a href="#">О нас</a></li>
-               <li><a href="./contacts.html">Контакты</a></li>
+         <nav class="navigation">
+            <ul class="navigation__menu">
+               <li class="navigation__item">
+                  <a href="./index.html" class="navigation__link">Главная</a>
+               </li>
+               <li class="navigation__item">
+                  <a href="#" class="navigation__link">О нас</a>
+               </li>
+               <li class="navigation__item">
+                  <a href="./contacts.html" class="navigation__link">Контакты</a>
+               </li>
             </ul>
          </nav>
       </header>
 
       <!-- Уникальное основное содержимое страницы -->
-      <main>
+      <main class="content container">
          <!-- Простые "хлебные крошки" -->
-         <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a> →
-            <span>О нас</span>
+         <nav aria-label="Хлебные крошки" class="bread-crumbs">
+            <a href="index.html" class="bread-crumbs__link">Главная</a> →
+            <span class="bread-crumbs__tab">О нас</span>
          </nav>
 
-         <h1>О нашей компании</h1>
-         <section>
-            <h2>Наша история</h2>
-            <p>Текст о том, как все начиналось...</p>
+         <h1 class="content__title">О нашей компании</h1>
+         <section class="section">
+            <h2 class="section__title">Наша история</h2>
+            <p class="section__description">Текст о том, как все начиналось...</p>
          </section>
 
-         <section>
-            <h2>Наша команда</h2>
-            <p>Текст о команде...</p>
+         <section class="section">
+            <h2 class="section__title">Наша команда</h2>
+            <p class="section__description">Текст о команде...</p>
          </section>
       </main>
 
       <!-- Подвал сайта -->
-      <footer>
+      <footer class="footer container">
          <p>&copy; 2025 SSSELERY. Все права защищены.</p>
          <p>Телефон: +7 (977) 520-06-71</p>
       </footer>

@@ -1,0 +1,43 @@
+@use "../mixins";
+
+.dialog {
+
+  padding: 1.25rem;
+  border: none;
+  border-radius: 12px;
+  width: 450px;
+
+  &::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+  }
+
+  &__title {
+   margin-inline: auto;
+   margin-block: 10px;
+  }
+}
+
+input, select, textarea, button {
+  width: 100%;
+  max-width: 480px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #c8c8c8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+:where(input, select, textarea, button):focus-visible {
+  outline: 2px solid #0a84ff;
+  outline-offset: 2px;
+}

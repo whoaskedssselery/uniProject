@@ -15,29 +15,209 @@
 }
 :root {
   --font-family: "Poppins", sans-serif;
+  --color-dark: #191A23;
   --color-light: #FFFFFF;
-  --color-dark: #000000;
+  --color-accent: #B9FF66;
+  --color-gray: #F3F3F3;
+  --color-gray-alt: #898989;
+  --color-dark-alt: #292A32;
+  --button-color: #0a84ff;
+  --button-height: 40px;
+  --button-width: 200px;
+  --border: 1px solid var(--color-dark);
+  --border-radius: 14px;
+  --border-radius-tiny: 7px;
+  --border-radius-big: 45px;
+  --transition-duration: 0.3s ease;
+  --container-inline: 300px;
+  --shadow: 0 5px 0 0 var(--color-dark);
+  --mobile-width: 767px;
+  --under-mobile-width: 430px;
+  --tablet-width: 1240px;
 }
 
-/* БАЗА из шаблона: читаемость и предсказуемость размеров */
-* {
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
   margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
   padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
   line-height: 1.5;
 }
 
-/* Формы: размеры, отступы, визуальный порядок */
-label {
-  display: block;
-  margin: 0.5rem 0 0.25rem;
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--color-light);
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.content__title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dialog {
+  padding: 1.25rem;
+  border: none;
+  border-radius: 12px;
+  width: 450px;
+}
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+.dialog__title {
+  margin-inline: auto;
+  margin-block: 10px;
 }
 
 input, select, textarea, button {
@@ -49,53 +229,116 @@ input, select, textarea, button {
   background: #fff;
 }
 
-/* Кнопка по умолчанию */
-button, [type=submit] {
-  background: #0a84ff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+label {
+  display: block;
+  margin: 0.5rem 0 0.25rem;
 }
 
-/* Состояния: клавиатура/мышь/ошибки */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
 :where(input, select, textarea, button):focus-visible {
   outline: 2px solid #0a84ff;
   outline-offset: 2px;
 }
 
-button:hover {
+.button {
+  background-color: var(--button-color);
+  height: var(--button-height);
+  max-width: var(--button-width);
+  width: 100%;
+  color: var(--color-light);
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+}
+.button:hover {
   filter: brightness(0.95);
 }
 
-:disabled, [aria-disabled=true] {
-  opacity: 0.6;
-  cursor: not-allowed;
+.bread-crumbs {
+  position: absolute;
+  padding-block: 14px;
+}
+.bread-crumbs__link {
+  color: var(--color-dark-alt);
+  font-weight: 700;
+  text-decoration: none;
+}
+.bread-crumbs__link:hover {
+  text-decoration: underline;
 }
 
-/* Подсветка ошибочных полей (установите aria-invalid="true") */
-[aria-invalid=true] {
-  border-color: #b00020;
+.container {
+  margin-inline: var(--container-inline);
 }
 
-/*  Применение шрифта*/
-body {
-  font-family: var(--font-family);
-  line-height: 1.5;
-}
-
-/* Стили для  окна-диалога */
-dialog {
-  padding: 1.25rem;
-  border: none;
-  border-radius: 12px;
-}
-
-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.form-actions {
+.section {
   display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+  margin-bottom: 50px;
+  border-radius: var(--border-radius);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  background-color: var(--color-gray);
+}
+.section__title {
+  display: inline-flex;
+  justify-content: start;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.header__logo {
+  font-size: clamp(24px, 518.4px, 32px);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 700;
+}
+
+.navigation {
+  padding: 10px;
+}
+.navigation__menu {
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  transition-duration: var(--transitin-duration);
+}
+.navigation__link {
+  color: var(--color-dark);
+  text-decoration: none;
+}
+.navigation__item:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.footer {
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding: 20px 30px;
+}
+.footer a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+.footer__info {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }/*# sourceMappingURL=styles.css.map */
