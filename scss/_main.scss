@@ -1,3 +1,5 @@
+@use "./media";
+
 body {
   display: flex;
   flex-direction: column;
@@ -18,4 +20,26 @@ p {
     justify-content: center;
     margin-bottom: 20px;
   }
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & iframe {
+    aspect-ratio: 16/9;
+  }
+
+  @media (max-width: 1280px) {
+    .media {
+      width: 100%;
+    }
+  }
+}
+
+.my-own-guard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
